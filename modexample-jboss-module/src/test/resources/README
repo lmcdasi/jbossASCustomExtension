@@ -1,0 +1,28 @@
+In order to test more than one module with the CUSTOM MODULE JBOSS Extension,
+one needs to do the followings:
+
+(a) Build the modexample-jboss-module with : install -DskipTests=true
+in order to get the modexample-jboss-module-tests jar file.
+
+(b) On the AS7 modules/com/example/ directory create: module1/main
+In this directory store the module.xml && the jar file belonging to the test project.
+
+(c) In the standalone.xml file where the CUSTOM MODULE extension subsystem is defined add the
+test module. The end result should look like:
+
+        <subsystem xmlns="urn:com.example.jboss.module.extension:1.0">
+            <modules>
+                <module identifier="com.example.jboss.module"/>
+                <module identifier="com.example.jboss.module1"/>
+            </modules>
+        </subsystem>
+        
+(d) In the CUSTOMO MODULE jboss extension module.xml add the dependency on the new module. 
+The end result should look like:
+....
+        <module name="com.example.jboss.module.api"/>
+        <module name="com.example.jboss.module" services="export"/>
+        <module name="com.example.jboss.module1" services="export"/>
+....
+
+Whith the above setup you'll be having the CUSTOM MODULE extension starting two modules.

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.0" name="com.example.jboss.module.extension">
+    <resources>
+       <resource-root path="modexample-jboss-bootstrap.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="javaee.api"/>
+        <module name="org.jboss.jandex"/>
+        <module name="org.jboss.staxmapper"/>
+        <module name="org.jboss.as.controller"/>
+        <module name="org.jboss.as.ee"/>
+        <module name="org.jboss.as.ejb3"/>
+        <module name="org.jboss.as.server"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.modules"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.jboss.as.network"/>
+        <module name="com.example.jboss.module.api"/>
+        <module name="com.example.jboss.module" services="export"/>
+        <module name="com.example.jboss.module.engvalve"/>
+    </dependencies>
+</module>

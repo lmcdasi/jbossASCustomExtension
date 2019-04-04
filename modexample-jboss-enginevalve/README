@@ -1,0 +1,26 @@
+################### ENGINE VALVE SETUP ###########################
+
+1. Goto /opt/jboss/modules/com/example/jboss/module and create the following directories:
+
+   1.a) /opt/jboss/modules/com/example/jboss/module/engvalve
+   1.b) /opt/jboss/modules/com/example/jboss/module/engvalve/main
+
+2. In /opt/jboss/modules/com/example/jboss/module/engvalve/main download:
+
+   2.a) modexample-jboss-enginevalve-SNAPSHOT.jar
+   2.b) module.xml
+ 
+   from GIT project modexample-jboss-enginevalve
+
+   Make sure that the module.xml contains the right revision of the jar file
+
+3. In jboss standalone.xml add the engvalve module.
+
+            <subsystem xmlns="urn:com.example.jboss.module.extenstion:1.0">
+                 <modules>
+                    <module identifier="com.example.jboss.module"/>
+                    <module identifier="com.example.jboss.module.engvalve"/>
+                 </modules>
+            </sunsystem>
+
+4. Implement an OLP mechanism in order to have the engine valve activated

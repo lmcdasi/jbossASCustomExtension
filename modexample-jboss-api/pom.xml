@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.example.jboss.module.api</groupId>
+  <artifactId>modexample-jboss-api</artifactId>
+  <name>Module Example JBoss Api</name>
+  <description>Public API's that an app can access</description>
+  <packaging>jar</packaging>
+  <version>SNAPSHOT</version>
+  
+  <dependencies>
+    <dependency>
+       <groupId>org.jboss.as</groupId>
+   	   <artifactId>jboss-as-server</artifactId>
+       <version>7.5.0.Final-redhat-21</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jboss.web</groupId>
+      <artifactId>jbossweb</artifactId>
+      <version>7.5.7.Final-redhat-1</version>
+    </dependency>
+
+    <dependency> 
+       <groupId>javax.servlet</groupId> 
+       <artifactId>javax.servlet-api</artifactId>
+       <version>3.0.1</version>
+    </dependency> 
+        
+    <dependency>
+       <groupId>junit</groupId>
+       <artifactId>junit</artifactId>
+       <version>4.5</version>
+       <scope>test</scope>
+    </dependency>
+    
+  </dependencies>
+</project>

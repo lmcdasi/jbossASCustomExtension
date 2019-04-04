@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>com.example.jboss.module</groupId>
+  <artifactId>modexample-jboss-bootstrap</artifactId>
+  <packaging>jar</packaging>
+  <name>Example of JBoss Extension Module</name>
+  <version>SNAPSHOT</version>
+
+  <dependencies>
+  
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>6.0</version>
+      <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>com.example.jboss.module</groupId>
+      <artifactId>modexample-jboss-module</artifactId>
+      <version>SNAPSHOT</version>
+    </dependency>
+    
+    <dependency>
+   	  <groupId>junit</groupId>
+   	  <artifactId>junit</artifactId>
+   	  <version>4.5</version>
+      <scope>test</scope>
+    </dependency>
+       
+    <dependency>
+      <groupId>org.jboss.as</groupId>
+      <artifactId>jboss-as-server</artifactId>
+    </dependency>
+    
+    <dependency>
+      <groupId>org.jboss.as</groupId>
+      <artifactId>jboss-as-web</artifactId>
+    </dependency>
+
+   </dependencies>
+  
+   <build>
+	<pluginManagement>
+	<plugins>
+
+		<plugin>
+			<artifactId>maven-antrun-plugin</artifactId>
+			<version>1.1</version>
+			<executions>
+				<execution>
+					<id>copy</id>
+					<phase>process-resources</phase>
+					<configuration>
+						<tasks>
+						<copy file="src/main/resources/module/module.xml" tofile="target/module.xml" overwrite="true"/>
+						</tasks>
+					</configuration>
+					<goals>
+						<goal>run</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+
+		<plugin>
+			<artifactId>maven-jar-plugin</artifactId>
+			<configuration>
+				<archive>
+					<manifestEntries>
+						<Extension-name>com.example.module.jboss.extension</Extension-name>
+					</manifestEntries>
+				</archive>
+			</configuration>
+		</plugin>
+
+	</plugins>
+	</pluginManagement>
+   </build>
+
+   <dependencyManagement>
+   	<dependencies>
+   		<dependency>
+   			<groupId>org.jboss.as</groupId>
+   			<artifactId>jboss-as-web</artifactId>
+   			<version>7.1.3.Final-redhat-4</version>
+   		</dependency>
+   		<dependency>
+            <groupId>org.jboss.as</groupId>
+            <artifactId>jboss-as-server</artifactId>
+            <version>7.5.0.Final-redhat-21</version>
+         </dependency>
+   	</dependencies>
+   </dependencyManagement>
+</project>

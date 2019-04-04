@@ -1,0 +1,21 @@
+<module xmlns="urn:jboss:module:1.0" name="com.example.jboss.module.engvalve">
+    <resources>
+       <resource-root path="modexample-jboss-enginevalve.jar"/>
+       <resource-root path="modexample-jboss-overloadprotection.jar"/>
+    </resources>
+
+    <dependencies>
+        <module name="javaee.api"/>
+        <module name="org.javassist"/>
+        <module name="com.sun.xml.bind"/>
+        <module name="org.jboss.logging"/>
+        <module name="org.jboss.msc"/>
+        <module name="org.dom4j" />
+        <module name="org.jgroups"/>
+        <module name="com.example.jboss.module.api"/>
+
+        <!-- catalina dependencies -->
+        <module name="org.jboss.as.web"/>
+        <module name="org.apache.log4j"/>
+    </dependencies>
+</module>

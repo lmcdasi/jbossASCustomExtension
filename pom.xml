@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.example.jboss.custom.module</groupId>
+	<artifactId>module-example</artifactId>
+	<name>JBossModuleExample</name>
+	<description>Custom JBOSS EAP6 module example</description>
+	<packaging>pom</packaging>
+	<version>SNAPSHOT</version>
+
+	<modules>
+		<module>modexample-jboss-api</module>
+		<module>modexample-jboss-module</module>
+		<module>modexample-jboss-bootstrap</module>
+		<module>modexample-jboss-enginevalve</module>
+	</modules>
+
+</project>
