@@ -1,4 +1,4 @@
-Sample project for EAP6 - AS7.
+Sample project for AS6 - AS7.
 
 It allows a user to add new services to jboss.
 
